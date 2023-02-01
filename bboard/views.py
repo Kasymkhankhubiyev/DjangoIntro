@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.http import HttpRequest
 
-# Create your views here.
+def index(request: HttpRequest):
+    """
+        request - хранит различную информацию о запросе:
+        - запрашиваемый интернет-адрес
+        - данные, полученные от посетителя
+        - служебную информацию от веб-абозревателя и т.д.
+    """
+    return HttpResponse("Здесь будет выведен список объявлений")
