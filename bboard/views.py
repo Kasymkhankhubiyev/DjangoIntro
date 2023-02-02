@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.http import HttpRequest
-from django.template import loader
+# from django.template import loader
+from django.shortcuts import render
 
 from .models import Bb
 
@@ -17,7 +18,8 @@ def index(request: HttpRequest) -> HttpResponse:
         на это указывает знак минус перет атрибутом функции - название колонки со знаком минус
 
     """
-    template = loader.get_template('bboard/index.html')  # Возвращает экземпляр класса Template
+    # template = loader.get_template('bboard/index.html')  # Возвращает экземпляр класса Template
     bbs = Bb.objects.order_by('-published')  # Формируем контекст/содержимое шаблона - набор данных для вывода
     context = {'bbs': bbs}
-    return HttpResponse(template.render(context, request))  # рендерим содержимое веб страницы
+    # return HttpResponse(template.render(context, request))  # рендерим содержимое веб страницы
+    return render(request=request, template_name='bboard/index.html', context=context)
