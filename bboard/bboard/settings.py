@@ -73,6 +73,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bboard.wsgi.application'
 
 
+# Authorixation model
+AUTH_USER_MODEL = 'main.AdvUser'
+
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

@@ -35,7 +35,7 @@
                         <a class="dropdown-item" href="#">Удалить</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Выход</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Вход</a></li>
             </u1>
         </div>
         <div class="row">
@@ -49,6 +49,7 @@
                 <span class="nav-link root font-weight-bold" href="#">Транспорт</span>
                 <a class="nav-link" href="#">Легковой</a>
                 <a class="nav-link" href="#">Грузовой</a>
+                <a class="nav-link root" href="{% url 'main:other' page='about' %}">О сайте</a>
             </nav>
             <section class="col border py-2">
                 {% bootstrap_messages %}
