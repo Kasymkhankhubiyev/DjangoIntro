@@ -72,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bboard.wsgi.application'
 
+EMAIL_PORT = 1025
 
 # Authorixation model
 AUTH_USER_MODEL = 'main.AdvUser'

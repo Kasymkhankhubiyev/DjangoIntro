@@ -1,11 +1,12 @@
 from django.urls import path
 from .views import index, other_page, BBLoginView, profile, BBLogoutView, ChangeUserInfoView
-from .views import BBpasswordChangeView, RegisterUserView, RegisterDoneView
+from .views import BBpasswordChangeView, RegisterUserView, RegisterDoneView, user_activate
 
 ## создаем список маршрутов на уровне приложения
 
 app_name = 'main'
 urlpatterns = [
+    path('accounts/register/activate/<str:sign>/', user_activate, name='register_activate'),
     path('accounts/register/done/', RegisterDoneView.as_view(), name='register_done'),
     path('accounts/register/', RegisterUserView.as_view(), name='register'),
     path('accounts/logout/', BBLogoutView.as_view(), name='logout'),
